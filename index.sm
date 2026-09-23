@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Hello there! You have opened page's html source! This website is open source btw, so check out github page in footer for full code! -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silvermoon</title>
+    <meta name="description" content="A HTML preprocessor with power of lua." />
+
+    <!-- Connect style sheets -->
+    <link rel="stylesheet" href="/resources/css/shared/global.css" />
+    <link rel="stylesheet" href="/resources/css/shared/header.css" />
+    <link rel="stylesheet" href="/resources/css/shared/footer.css" />
+
+    <link rel="stylesheet" href="/resources/css/mainPage/hero.css" />
+    <link rel="stylesheet" href="/resources/css/mainPage/features.css" />
+
+    <!-- Other sources -->
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a class="logo-container" href="/" aria-label="Go to main page">
+        <img src="/resources/images/logo.svg" alt="Silvermoon logo" />
+      </a>
+      <nav>
+        <a href="/docs"
+          ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
+        >
+        <a href="/docs/getting-started#Install"
+          ><i class="bi bi-download" aria-hidden="true"></i>Install</a
+        >
+        <a href="https://github.com/IEatUranium238/silvermoon"
+          ><i class="bi bi-github" aria-hidden="true"></i>GitHub</a
+        >
+        <button
+          class="invisible square"
+          id="changeModeButton"
+          aria-label="Change theme button"
+        >
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
+      </nav>
+      <button class="invisible square" id="headerBurger" aria-label="Open menu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero dark-mode">
+        <div class="hero-content">
+          <h1>Build dynamic web pages with Lua and HTML.</h1>
+          <p>Yes! It's that easy!</p>
+          <div class="buttons">
+            <button
+              class="primary big-font"
+              onclick="location.href = '/docs/getting-started'"
+            >
+              Get started
+            </button>
+            <button
+              class="big-font"
+              onclick="
+                location.href = 'https:/\/github.com/IEatUranium238/silvermoon'
+              "
+            >
+              Source code
+            </button>
+          </div>
+        </div>
+        <p aria-hidden="true" class="scroll-down-invite">
+          <i class="bi bi-arrow-bar-down" aria-hidden="true"></i> Scroll down
+        </p>
+      </section>
+
+      <section class="features">
+        <lua>
+          local renderer = require("include.renderFeatures"); renderer.render();
+        </lua>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-main">
+          <p>
+            Made with ❤️, running Silvermoon version
+            <lua>return sm.VERSION</lua>
+          </p>
+          <p>
+            <a href="https://lua.org" target="_blank"
+              ><i>Lua <i class="bi bi-arrow-up-right" aria-hidden="true"></i></i
+            ></a>
+            is owned by PUC-Rio. Trademarks are the property of their respective
+            owners.
+          </p>
+        </div>
+        <a href="#" target="_blank"
+          ><i
+            >This website is open source
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="./resources/js/changeMode.js"></script>
+    <script src="./resources/js/featureListNav.js" defer></script>
+  </body>
+</html>

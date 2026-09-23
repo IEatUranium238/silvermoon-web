@@ -1,0 +1,126 @@
+:root {
+  --cl-bg: #eee;
+  --cl-br: #bfbfbf;
+  --cl-tx: #333;
+  --cl-ac: #256AD2;
+}
+
+.dark-mode {
+  --cl-bg: #202020;
+  --cl-br: #2f2f2f;
+  --cl-tx: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  font-weight: 500;
+  color: var(--cl-tx);
+  background-color: var(--cl-bg);
+  translate: all 0.15s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--cl-tx);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.25s ease-in-out;
+
+  display: inline-flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--cl-ac);
+  }
+}
+
+button {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: all 0.25s ease-in-out;
+
+  color: var(--cl-tx);
+
+  border: solid 1.5px var(--cl-br);
+  background-color: transparent;
+
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--cl-br);
+  }
+
+  &.primary {
+    border-color: var(--cl-ac);
+
+    &:hover {
+      background-color: var(--cl-ac);
+      color: white;
+    }
+
+  }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cl-br) var(--cl-bg);
+}
+
+.bi {
+  display: inline-flex;
+  flex-direction: row;
+  min-height: 100%;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  color: inherit;
+}
+
+.invisible {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.square {
+  aspect-ratio: calc(1/1);
+}
+
+.big-font {
+  font-size: 1.5rem;
+
+  @media (max-width: 700px) {
+    font-size: 1.7rem;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
