@@ -1,1 +1,5 @@
 Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^docs/([^/]+)/?$ /docs/index.sm?page=$1 [END,QSA]

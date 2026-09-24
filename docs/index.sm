@@ -62,9 +62,13 @@
       </button>
     </header>
 
-    <main>
+    <aside>
+
+    </aside>
+
+    <article>
       
-    </main>
+    </article>
 
     <footer>
       <div class="footer-content">
