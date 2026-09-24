@@ -107,7 +107,9 @@
             owners.
           </p>
         </div>
-        <a href="#" target="_blank"
+        <a
+          href="https://github.com/IEatUranium238/silvermoon-web"
+          target="_blank"
           ><i
             >This website is open source
             <i class="bi bi-arrow-up-right" aria-hidden="true"></i></i
