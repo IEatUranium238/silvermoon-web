@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/resources/css/shared/header.css" />
     <link rel="stylesheet" href="/resources/css/shared/footer.css" />
 
+    <link rel="stylesheet" href="/resources/css/docs/main.css" />
+    <link rel="stylesheet" href="/resources/css/docs/markdown.css" />
+
     <!-- Other sources -->
     <!-- Bootstrap icons -->
     <link
@@ -62,13 +65,28 @@
       </button>
     </header>
 
-    <aside>
+    <lua>
+      package.path = package.path .. ";../?"; render =
+      require("include.docsList");
+    </lua>
 
-    </aside>
+    <main>
+      <aside>
+        <div class="title">
+          <button aria-label="Hide sidebar" class="big-font square">
+            <i class="bi bi-arrow-bar-left" aria-hidden="true"></i>
+          </button>
+          <h2>List of contents</h2>
+        </div>
+        <div class="content">
+          <lua>render.listDocs()</lua>
+        </div>
+      </aside>
 
-    <article>
-      
-    </article>
+      <article class="markdown">
+        <lua> render.renderFile() </lua>
+      </article>
+    </main>
 
     <footer>
       <div class="footer-content">

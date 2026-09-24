@@ -1,0 +1,110 @@
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  line-height: 1.25;
+
+  border-bottom: 1.5px solid var(--cl-br);
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+}
+
+.markdown p {
+  margin: 0 0 0.5em 0.5em;
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 0 0 1em;
+  padding-left: 2em;
+}
+
+.markdown li {
+  margin: 0.25em 0;
+}
+
+.markdown blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--cl-ac);
+  background: var(--cl-br);
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.markdown pre {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  tab-size: 2;
+
+  padding: 5px;
+
+  border: 1.5px solid var(--cl-br);
+  border-radius: 5px;
+
+  overflow: auto;
+
+  background-color: #282C34;
+
+  font-size: 1rem;
+
+  margin-bottom: 1.2rem;
+}
+
+.markdown code {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  display: inline-flex;
+  tab-size: 2;
+
+  padding: 5px;
+  border-radius: 5px;
+
+  overflow: auto;
+
+  background-color: #282C34;
+
+  font-size: 1rem;
+
+  color: #ABB2BF;
+
+  width: fit-content;
+}
+
+.markdown hr {
+  border: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1.5px solid var(--cl-br);
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+.markdown em {
+  font-style: italic;
+}

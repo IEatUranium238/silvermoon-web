@@ -46,7 +46,7 @@
         <a href="/docs"
           ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
         >
-        <a href="/docs/getting-started#Install"
+        <a href="/docs/getting-started/#Install"
           ><i class="bi bi-download" aria-hidden="true"></i>Install</a
         >
         <a href="https://github.com/IEatUranium238/silvermoon"
