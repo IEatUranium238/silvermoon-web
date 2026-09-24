@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="/resources/css/shared/header.css" />
     <link rel="stylesheet" href="/resources/css/shared/footer.css" />
 
-    <link rel="stylesheet" href="/resources/css/mainPage/hero.css" />
-    <link rel="stylesheet" href="/resources/css/mainPage/features.css" />
-
     <!-- Other sources -->
     <!-- Bootstrap icons -->
     <link
@@ -66,37 +63,7 @@
     </header>
 
     <main>
-      <section class="hero dark-mode">
-        <div class="hero-content">
-          <h1>Build dynamic web pages with Lua and HTML.</h1>
-          <p>Yes! It's that easy!</p>
-          <div class="buttons">
-            <button
-              class="primary big-font"
-              onclick="location.href = '/docs/getting-started'"
-            >
-              Get started
-            </button>
-            <button
-              class="big-font"
-              onclick="
-                location.href = 'https:/\/github.com/IEatUranium238/silvermoon'
-              "
-            >
-              Source code
-            </button>
-          </div>
-        </div>
-        <p aria-hidden="true" class="scroll-down-invite">
-          <i class="bi bi-arrow-bar-down" aria-hidden="true"></i> Scroll down
-        </p>
-      </section>
-
-      <section class="features">
-        <lua>
-          local renderer = require("include.renderFeatures"); renderer.render();
-        </lua>
-      </section>
+      
     </main>
 
     <footer>
@@ -124,8 +91,7 @@
       </div>
     </footer>
 
-    <script src="./resources/js/changeMode.js"></script>
-    <script src="./resources/js/featureListNav.js" defer></script>
+    <script src="/resources/js/changeMode.js"></script>
     <script defer>
       hljs.highlightAll();
     </script>

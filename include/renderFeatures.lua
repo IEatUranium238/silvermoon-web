@@ -60,7 +60,7 @@ function M.render()
     }
 
     for _, post in posts do
-      print('<a href="/posts/' .. post.url .. '">' 
+      print('<a href="/posts/' .. post.url .. '">'
       .. post.title "</a>)
     end
   </lua>
@@ -152,7 +152,8 @@ function M.render()
     end
 
     print([[
-    <pre aria-hidden="true" id="code]] .. index .. [[" ]] .. extra .. [[><code class="language-html">]] .. sm.escape_html(val) .. [[</code></pre>
+    <pre aria-hidden="true" id="code]] ..
+    index .. [[" ]] .. extra .. [[><code class="language-html">]] .. sm.escape_html(val) .. [[</code></pre>
     ]]
     )
   end

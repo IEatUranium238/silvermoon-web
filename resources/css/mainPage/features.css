@@ -21,7 +21,7 @@
   }
 
   p {
-    font-size: clamp(1.3rem, 2vw, 1.5rem);    
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
   }
 
   .code {
@@ -32,13 +32,16 @@
 
     padding: 5px;
 
-    background-color: var(--cl-bg);
     border: 1.5px solid var(--cl-br);
     border-radius: 5px;
 
     overflow: auto;
 
+    background-color: #282C34;
+
     font-size: 1rem;
+
+    color: #ABB2BF;
 
     width: fit-content;
     margin-bottom: 1.2rem;
@@ -46,15 +49,14 @@
 
   pre {
     font-family: 'Fira Code', 'Courier New', Courier, monospace;
-
+    background-color: #282C34;
     line-height: 1.5;
     white-space: pre-wrap;
     word-wrap: break-word;
     tab-size: 2;
 
-    padding: 15px;
+    padding: 10px;
 
-    background-color: var(--cl-bg);
     border: 1.5px solid var(--cl-br);
     border-radius: 5px;
 
@@ -72,6 +74,10 @@
     @media (max-width: 700px) {
       width: auto;
     }
+  }
+
+  code {
+    font-size: 1rem;
   }
 
   @media (max-width: 700px) {
