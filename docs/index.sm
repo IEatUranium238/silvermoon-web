@@ -118,6 +118,7 @@
     </footer>
 
     <script src="/resources/js/changeMode.js"></script>
+    <script src="/resources/js/sidebarToggle.js" defer></script>
     <script defer>
       hljs.highlightAll();
     </script>

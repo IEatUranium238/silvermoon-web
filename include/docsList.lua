@@ -24,8 +24,9 @@ function M.listDocs(page)
 
     local extra = ""
     local icon = '<i class="bi bi-caret-right-fill" aria-hidden="true"></i>'
+
     if (folderHasPage) then
-      extra = "open"
+      extra = " open"
       icon = '<i class="bi bi-caret-down-fill" aria-hidden="true"></i>'
     end
 
@@ -52,6 +53,8 @@ function M.listDocs(page)
           '<a class="doc-item big-font ' .. extra .. '" href="/docs/' .. doc.url .. '">' .. doc.name .. '</a>'
         )
       end
+
+      extra = ""
     end
 
     print('</div>')
