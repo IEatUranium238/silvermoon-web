@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<lua>
+  if sm.params.page == nil or sm.params.page == "index.sm" then
+  sm.redirect("/docs/getting-started"); sm.halt() end
+</lua>
 <!-- Hello there! You have opened page's html source! This website is open source btw, so check out github page in footer for full code! -->
 <html lang="en" data-theme="vs-dark">
   <head>
@@ -76,15 +80,15 @@
           <button aria-label="Hide sidebar" class="big-font square">
             <i class="bi bi-arrow-bar-left" aria-hidden="true"></i>
           </button>
-          <h2>List of contents</h2>
+          <h2>Pages</h2>
         </div>
         <div class="content">
-          <lua>render.listDocs()</lua>
+          <lua>render.listDocs(sm.params.page)</lua>
         </div>
       </aside>
 
       <article class="markdown">
-        <lua> render.renderFile() </lua>
+        <lua> render.renderFile(sm.params.page) </lua>
       </article>
     </main>
 

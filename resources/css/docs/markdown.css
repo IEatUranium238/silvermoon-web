@@ -45,8 +45,8 @@
 
   margin: 1em 0;
   padding: 0.5em 1em;
+  border: 1.5px solid var(--cl-br);
   border-left: 4px solid var(--cl-ac);
-  background: var(--cl-br);
 
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
