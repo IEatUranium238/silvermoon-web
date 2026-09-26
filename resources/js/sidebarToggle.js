@@ -1,4 +1,7 @@
 const folders = document.querySelectorAll(".doc-btn");
+const collapse = document.getElementById("sideBtn");
+
+let sidebarOpen = true;
 
 folders.forEach((folder) => {
   folder.addEventListener("click", () => {
@@ -29,4 +32,25 @@ folders.forEach((folder) => {
     }
   });
 });
-  
+
+collapse.addEventListener("click", () => {
+  sidebarOpen = !sidebarOpen;
+  const sidebar = document.querySelector("aside");
+  const content = sidebar.querySelector(".content");
+  const title = sidebar.querySelector(".title").querySelector("h2");
+
+  if (!sidebarOpen) {
+    sidebar.style.borderColor = "transparent";
+    sidebar.style.minWidth = "0";
+
+    content.classList.add("hidden");
+    title.classList.add("hidden");
+  } else {
+    sidebar.removeAttribute("style");
+
+    setTimeout(() => {
+      content.classList.remove("hidden");
+      title.classList.remove("hidden");
+    }, 150);
+  }
+});

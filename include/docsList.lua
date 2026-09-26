@@ -1,14 +1,11 @@
 local M = {}
 
 local docsList = {
-  { url = "getting-started", name = "Getting started", folder = 0 },
-  { url = "test",            name = "Test",            folder = 1 },
-  { url = "test",            name = "Test",            folder = 1 }
+  { url = "getting-started", name = "Getting started", folder = 0 }
 }
 
 local folderLists = {
   { id = 0, name = "Introduction" },
-  { id = 1, name = "Test" }
 }
 
 function M.listDocs(page)

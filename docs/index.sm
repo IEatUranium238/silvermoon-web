@@ -77,7 +77,7 @@
     <main>
       <aside>
         <div class="title">
-          <button aria-label="Hide sidebar" class="big-font square">
+          <button aria-label="Hide sidebar" class="big-font square" id="sideBtn">
             <i class="bi bi-arrow-bar-left" aria-hidden="true"></i>
           </button>
           <h2>Pages</h2>
