@@ -142,6 +142,7 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 ```
+> **NOTE:** Remove comments before running the service!
 
 > **NOTE:** Adjust User, WorkingDirectory, and ExecStart to match your setup.
 
@@ -164,6 +165,6 @@ New-Service -Name "Silvermoon HTML preprocessor" -BinaryPathName "C:\Path\to\sil
 
 ## What's next?
 
-- [Write your first silvermoon web page](/docs/first-page)
+- [Write your first silvermoon web page](/docs/first-steps)
 
 - [Lua API referance](/docs/api)

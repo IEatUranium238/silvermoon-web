@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css');
+
 :root {
   --cl-bg: #eee;
   --cl-br: #bfbfbf;
@@ -123,4 +125,9 @@ html {
 
 .hidden {
   display: none !important;
+}
+
+
+code.hljs {
+  padding: 0 !important;
 }
