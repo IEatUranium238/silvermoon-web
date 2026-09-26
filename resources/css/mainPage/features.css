@@ -10,7 +10,7 @@
   .side {
     max-width: 50%;
 
-    @media (max-width: 700px) {
+    @media (max-width: 770px) {
       max-width: 100%;
     }
   }
@@ -71,7 +71,7 @@
 
     min-height: 250px;
 
-    @media (max-width: 700px) {
+    @media (max-width: 770px) {
       width: auto;
     }
   }
@@ -80,7 +80,7 @@
     font-size: 1rem;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 770px) {
     flex-direction: column;
     gap: 25px;
   }

@@ -34,7 +34,7 @@
 .hero-content {
   z-index: 2;
   position: absolute;
-  max-width: 700px;
+  max-width: 770px;
   display: flex;
   flex-direction: column;
 

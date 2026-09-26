@@ -28,7 +28,7 @@ function M.listDocs(page)
     end
 
     print('<button class="big-font doc-btn' ..
-      extra .. '" id="folderBtn' .. folder.id .. '">' .. icon .. " " .. folder.name .. '</button>')
+      extra .. ' folder-btn-' .. folder.id .. '">' .. icon .. " " .. folder.name .. '</button>')
 
     if (not folderHasPage) then
       extra = "hidden"
@@ -36,7 +36,7 @@ function M.listDocs(page)
       extra = ""
     end
 
-    print('<div class="doc-folder ' .. extra .. '" id="folder' .. folder.id .. '">')
+    print('<div class="doc-folder doc-folder-' .. folder.id .. ' ' .. extra .. '">')
 
     extra = ""
 

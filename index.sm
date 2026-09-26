@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silvermoon</title>
     <meta name="description" content="A HTML preprocessor with power of lua." />
+    <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico" />
 
     <!-- Connect style sheets -->
     <link rel="stylesheet" href="/resources/css/shared/global.css" />
@@ -53,8 +54,7 @@
           ><i class="bi bi-github" aria-hidden="true"></i>GitHub</a
         >
         <button
-          class="invisible square"
-          id="changeModeButton"
+          class="invisible square change-mode-button"
           aria-label="Change theme button"
         >
           <i class="bi bi-moon-stars" aria-hidden="true"></i>
@@ -124,8 +124,38 @@
       </div>
     </footer>
 
+    <div class="hidden" id="menu">
+      <div class="top">
+        <button
+          class="invisible square big-font change-mode-button"
+          aria-label="Change theme button"
+        >
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
+        <button
+          class="invisible square big-font"
+          aria-label="Close menu"
+          id="closeMenu"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <nav>
+        <a href="/docs" class="big-font"
+          ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
+        >
+        <a href="/docs/getting-started/#Install" class="big-font"
+          ><i class="bi bi-download" aria-hidden="true"></i>Install</a
+        >
+        <a href="https://github.com/IEatUranium238/silvermoon" class="big-font"
+          ><i class="bi bi-github" aria-hidden="true"></i>GitHub</a
+        >
+      </nav>
+    </div>
+
     <script src="./resources/js/changeMode.js"></script>
     <script src="./resources/js/featureListNav.js" defer></script>
+    <script src="/resources/js/menu.js" defer></script>
     <script defer>
       hljs.highlightAll();
     </script>

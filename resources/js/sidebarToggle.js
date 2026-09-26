@@ -14,10 +14,15 @@ folders.forEach((folder) => {
       icon.classList.remove("bi-caret-down-fill");
       icon.classList.add("bi-caret-right-fill");
 
-      const folderId = "folder" + folder.id.slice(9);
-      const content = document.getElementById(folderId);
+      const folderClass = Array.from(folder.classList).find((cls) =>
+        cls.startsWith("folder-btn-"),
+      );
+      const contentClass = folderClass.replace("folder-btn-", "doc-folder-");
 
-      content.classList.add("hidden");
+      const contents = document.querySelectorAll("." + contentClass);
+      contents.forEach((content) => {
+        content.classList.add("hidden");
+      });
     } else {
       folder.classList.add("open");
 
@@ -25,10 +30,15 @@ folders.forEach((folder) => {
       icon.classList.remove("bi-caret-right-fill");
       icon.classList.add("bi-caret-down-fill");
 
-      const folderId = "folder" + folder.id.slice(9);
-      const content = document.getElementById(folderId);
+      const folderClass = Array.from(folder.classList).find((cls) =>
+        cls.startsWith("folder-btn-"),
+      );
+      const contentClass = folderClass.replace("folder-btn-", "doc-folder-");
 
-      content.classList.remove("hidden");
+      const contents = document.querySelectorAll("." + contentClass);
+      contents.forEach((content) => {
+        content.classList.remove("hidden");
+      });
     }
   });
 });
@@ -45,8 +55,19 @@ collapse.addEventListener("click", () => {
 
     content.classList.add("hidden");
     title.classList.add("hidden");
+
+    collapse.setAttribute("aria-label", "Show sidebar");
+
+    collapse.setHTMLUnsafe(
+      '<i class="bi bi-arrow-bar-right" aria-hidden="true"></i>',
+    );
   } else {
     sidebar.removeAttribute("style");
+    collapse.setHTMLUnsafe(
+      '<i class="bi bi-arrow-bar-left" aria-hidden="true"></i>',
+    );
+
+    collapse.setAttribute("aria-label", "Hide sidebar");
 
     setTimeout(() => {
       content.classList.remove("hidden");
