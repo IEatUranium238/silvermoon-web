@@ -1,7 +1,8 @@
 local M = {}
 
 local docsList = {
-  { url = "getting-started", name = "Getting started", folder = 0 }
+  { url = "getting-started", name = "Getting started", folder = 0 },
+  { url = "first-page", name = "First page", folder = 0 },
 }
 
 local folderLists = {

@@ -4,15 +4,14 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
   line-height: 1.25;
-
-  border-bottom: 1.5px solid var(--cl-br);
 }
 
 .markdown h1 {
   font-size: 2.5rem;
+  border-bottom: 1.5px solid var(--cl-br);
 }
 
 .markdown h2 {
@@ -23,12 +22,18 @@
   font-size: 1.5rem;
 }
 
+.markdown h4 {
+  font-size: 1.3rem;
+}
+
 .markdown p {
-  margin: 0 0 0.5em 0.5em;
+  font-size: 1.3rem;
+  line-height: 1.25;
 }
 
 .markdown ul,
 .markdown ol {
+  font-size: 1.3rem;
   margin: 0 0 1em;
   padding-left: 2em;
 }
@@ -70,7 +75,7 @@
 
   font-size: 1rem;
 
-  margin-bottom: 1.2rem;
+  margin: 1rem;
 }
 
 .markdown code {
