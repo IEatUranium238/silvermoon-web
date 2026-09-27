@@ -14,6 +14,7 @@ aside {
   border-right: 1.5px solid var(--cl-br);
 
   min-width: 250px;
+  max-width: 250px;
 
   .title {
     display: flex;

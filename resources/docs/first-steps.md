@@ -304,7 +304,7 @@ Now, let's use our installed packages, let's send a request to [cataas](https://
       do return end -- Stop tag's script execution
     end
 
-    --Put pars together and parse JSON
+    --Put parts together and parse JSON
     local response = table.concat(response_table)
     local cat_data = cjson.decode(response)
 
@@ -336,5 +336,5 @@ If everything works as intended you should see:
 
 ## What's next?
 
-- [Your first project: tic-tac-toe](/docs/tic-tac-toe)
+- [Configuration & security](/docs/conf-sec)
 - [Lua API referance](/docs/api)

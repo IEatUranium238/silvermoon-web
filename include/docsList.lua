@@ -3,6 +3,7 @@ local M = {}
 local docsList = {
   { url = "getting-started", name = "Getting started", folder = 0 },
   { url = "first-steps",     name = "First steps",     folder = 0 },
+  { url = "conf-sec",     name = "Configuration and security",     folder = 0 },
 }
 
 local folderLists = {
