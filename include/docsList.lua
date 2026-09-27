@@ -1,14 +1,18 @@
 local M = {}
 
 local docsList = {
-  { url = "getting-started", name = "Getting started", folder = 0 },
-  { url = "first-steps",     name = "First steps",     folder = 0 },
-  { url = "conf-sec",     name = "Configuration and security",     folder = 0 },
-  { url = "api",     name = "API reference list",     folder = 1 },
+  { url = "getting-started", name = "Getting started",            folder = 0 },
+  { url = "first-steps",     name = "First steps",                folder = 0 },
+  { url = "conf-sec",        name = "Configuration and security", folder = 0 },
+  { url = "api",             name = "API reference list",         folder = 1 },
+  { url = "api-request",     name = "sm.request",                 folder = 1 },
+  { url = "api-header",      name = "sm.header",                  folder = 1 },
+  { url = "api-body",        name = "sm.body",                    folder = 1 },
+  { url = "api-params",        name = "sm.params",                    folder = 1 },
 }
 
 local folderLists = {
-  { id = 0, name = "Introduction" },  
+  { id = 0, name = "Introduction" },
   { id = 1, name = "API reference" },
 }
 
