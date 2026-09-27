@@ -4,10 +4,12 @@ local docsList = {
   { url = "getting-started", name = "Getting started", folder = 0 },
   { url = "first-steps",     name = "First steps",     folder = 0 },
   { url = "conf-sec",     name = "Configuration and security",     folder = 0 },
+  { url = "api",     name = "API reference list",     folder = 1 },
 }
 
 local folderLists = {
-  { id = 0, name = "Introduction" },
+  { id = 0, name = "Introduction" },  
+  { id = 1, name = "API reference" },
 }
 
 local isProd = false

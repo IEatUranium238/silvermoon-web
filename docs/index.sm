@@ -150,7 +150,7 @@
       </nav>
       <div class="docs">
         <h2>Pages</h2>
-        <div class="contents">
+        <div class="content">
           <lua>render.listDocs(sm.params.page)</lua>
         </div>
       </div>

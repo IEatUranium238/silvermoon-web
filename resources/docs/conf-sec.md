@@ -56,5 +56,4 @@ Also, if you need to enable them, make sure you don't take untrusted user input 
 
 ## Whats next?
 
-- [Project: tic-tac-toe](/docs/ttt-start)
 - [Lua API referance](/docs/api)
