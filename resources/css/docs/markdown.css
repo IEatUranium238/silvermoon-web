@@ -115,5 +115,6 @@
 }
 
 .markdown a {
-  font-style: italic;
+  color: var(--cl-ac);
+  font-size: 1.3rem;
 }

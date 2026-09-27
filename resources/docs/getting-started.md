@@ -113,14 +113,13 @@ To use UNIX sockets with Silvermoon set up following:
 
 1. Set `SM_USE_UNIXSOCKS` env variable to "true" (A string, not a boolean)
 2. For previous config change SetHandler to
-
-```text
-SetHandler "unix:/var/run/silvermoon_fcgi.sock"
-```
+  ```text
+  SetHandler "proxy:unix:/var/run/silvermoon_fcgi.sock|fcgi://localhost/"
+  ```
 
 ## Setting up as service
 
-**Linux (systemd):**
+### Linux (systemd)
 
 <br />
 
@@ -133,18 +132,32 @@ After=network.target
 
 [Service]
 Type=simple
-User=nobody # Replace with your user
-WorkingDirectory=/usr/local/bin # Change to sm's binary parent folder if needed
-ExecStart=/usr/local/bin/silvermoon # Change to sm's binary name if needed
+WorkingDirectory=/usr/local/bin # Change to your binary's parent folder
+ExecStart=/usr/local/bin/silvermoon # Change to binary's path
+EnvironmentFile=/etc/silvermoon/silvermoon.env
+
+# This is needed to avoid race condition with UNIX socket, remove if you don't plan on using that
+ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; for i in $(seq 1 40); do [ -S /var/run/silvermoon_fcgi.sock ] && exit 0; sleep 0.25; done; echo "socket never appeared" >&2; exit 1'
+ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; exec /bin/chmod 777 /var/run/silvermoon_fcgi.sock'
+ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; exec /bin/chgrp "${SM_SOCK_GROUP:-www-data}" /var/run/silvermoon_fcgi.sock'
+
 Restart=on-failure
 RestartSec=5
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
 ```
-> **NOTE:** Remove comments before running the service!
 
-> **NOTE:** Adjust User, WorkingDirectory, and ExecStart to match your setup.
+Also create a file at `/etc/silvermoon/silvermoon.env`, you can use it to set envrioment variables for Silvermoon.
+
+> **NOTE:** Remove comments before running the service!
+>
+> <br />
+> **NOTE:** Adjust WorkingDirectory, and ExecStart to match your setup.
+>
+> <br />
+> **NOTE:** By default the socket's group is set to `www-data`. To use a different group, set `SM_SOCK_GROUP` in `/etc/silvermoon/silvermoon.env`, after that run `systemctl restart silvermoon`.
 
 To run, execute following:
 
@@ -155,7 +168,7 @@ sudo systemctl start silvermoon
 
 <br />
 
-**Windows (powershell):**
+### Windows (powershell)
 
 ```pwsh
 New-Service -Name "Silvermoon HTML preprocessor" -BinaryPathName "C:\Path\to\silvermoon" -StartupType Automatic

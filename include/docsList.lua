@@ -2,12 +2,14 @@ local M = {}
 
 local docsList = {
   { url = "getting-started", name = "Getting started", folder = 0 },
-  { url = "first-steps",      name = "First steps",      folder = 0 },
+  { url = "first-steps",     name = "First steps",     folder = 0 },
 }
 
 local folderLists = {
   { id = 0, name = "Introduction" },
 }
+
+local isProd = false
 
 function M.listDocs(page)
   for _, folder in pairs(folderLists) do
@@ -61,7 +63,20 @@ end
 
 function M.renderFile(page)
   local lunamark = require("lunamark")
-  local http = require("socket.http")
+
+  local file, msg, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
+  local markdown_input = "# Failed to load this documentation page!\n"
+
+  if (file ~= nil) then
+    markdown_input = file:read("*all") .. "\n"
+    file:close()
+  else
+    if code == 2 then
+      markdown_input = "# Page not found :(\n[Go to main documentation page](/docs/)\n"
+    else
+      markdown_input = "# Internal server error :(\n[Go to main documentation page](/docs/)\n"
+    end
+  end
 
   local writer = lunamark.writer.html.new()
   local parse = lunamark.reader.markdown.new(writer, {
@@ -71,20 +86,6 @@ function M.renderFile(page)
     header_attributes = true,
     table = true
   })
-
-  local markdown_input = "# Failed to load documentation!\n"
-
-
-  --TODO: change to https in production
-  local body, code = http.request("http://" .. sm.header.HOST .. "/resources/docs/" .. page .. ".md")
-
-  if code == 200 then
-    markdown_input = body .. "\n";
-  elseif code == 404 then
-    markdown_input = "# 404 - Page not found :(\n [Go to first docs page](/docs)\n"
-  else
-    markdown_input = "# HTTP error " .. code .. " :(\n [Go to first docs page](/docs)\n"
-  end
 
   local html_output = parse(markdown_input)
   print(html_output)

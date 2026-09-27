@@ -57,7 +57,7 @@ Example:
 </html>
 ```
 
-Will just following as plain text: 
+Will just output following as plain text: 
 
 <br />
 
