@@ -8,7 +8,9 @@
 
 - content - new page content as string
 
-> **NOTE:** sm.set_page_content doesn't stop lua tag execution use `do return end` to stop lua execution!
+> **NOTE:** `sm.set_page_content` doesn't stop lua tag execution use `do return end` to stop lua execution!
+
+Example:
 
 ```lua
 sm.set_page_content("Hello there!")

@@ -6,6 +6,8 @@
 
 > **NOTE:** sm.halt does not stop code execution in current lua tag. Use `do return end` to finish code execution in the tag.
 
+Example:
+
 ```lua
 sm.halt()
 do return end

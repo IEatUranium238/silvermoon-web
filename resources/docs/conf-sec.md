@@ -4,8 +4,8 @@
 
 Silvermoon allows you to configure it via env variables.
 
-- `SM_USE_UNIXSOCKS` - Use UNIX sockets to connect to FastCGI server
-- `SM_SOCK_GROUP` - The group to give socket permisions
+- `SM_USE_UNIXSOCKS` - Use UNIX sockets to connect to FastCGI server ("true" - to enable)
+- `SM_SOCK_GROUP` - The group to give socket permisions (default: www-data)
 
 ## Security
 
@@ -52,7 +52,9 @@ It's a good practice not to enable these unless your app needs them. Otherwise l
 
 <br />
 
-Also, if you need to enable them, make sure you don't take untrusted user input into them. Unless you are sure you have validated and cleanded it.
+Also, if you need to enable them, make sure you don't take untrusted user input into them. Unless you are sure you have validated and cleaned it.
+
+It is also a good practise to escape and clean all untrusted user input that you plan to display.
 
 ## Whats next?
 

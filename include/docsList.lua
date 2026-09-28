@@ -17,6 +17,10 @@ local docsList = {
   { url = "api-redirect",         name = "sm.redirect",                folder = 2 },
   { url = "api-halt",             name = "sm.halt",                    folder = 2 },
   { url = "api-set-page-content", name = "sm.set-page-content",        folder = 2 },
+  { url = "api-escape-html",      name = "sm.escape-html",             folder = 3 },
+  { url = "api-unescape-html",    name = "sm.unescape-html",           folder = 3 },
+  { url = "api-escape-url",       name = "sm.escape-url",              folder = 3 },
+  { url = "api-unescape-url",     name = "sm.unescape-url",            folder = 3 },
 }
 
 
@@ -24,6 +28,7 @@ local folderLists = {
   { id = 0, name = "Introduction" },
   { id = 1, name = "Request APIs" },
   { id = 2, name = "Response APIs" },
+  { id = 3, name = "Security APIs" },
 }
 
 function M.listDocs(page)
