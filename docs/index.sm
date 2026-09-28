@@ -70,7 +70,7 @@
     </header>
 
     <lua>
-      package.path = package.path .. ";/var/www/html/include/?.lua"; render =
+      package.path = package.path .. ";" .. sm.FOLDER .. "/../include/".. "?.lua"; render =
       require("docsList");
     </lua>
 

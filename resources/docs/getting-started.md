@@ -1,6 +1,6 @@
 # Getting started
 
-> **NOTE:** Silvermoon is in active development, you may experience bugs, rough edges and major API changes between versions
+> **NOTE:** Silvermoon is in active development, you may experience bugs, rough edges and major API changes between versions. It is not recommended for security critical websites at this moment as it is missing some security APIs.
 
 ## What is Silvermoon
 
@@ -113,9 +113,10 @@ To use UNIX sockets with Silvermoon set up following:
 
 1. Set `SM_USE_UNIXSOCKS` env variable to "true" (A string, not a boolean)
 2. For previous config change SetHandler to
-  ```text
-  SetHandler "proxy:unix:/var/run/silvermoon_fcgi.sock|fcgi://localhost/"
-  ```
+
+```text
+SetHandler "proxy:unix:/var/run/silvermoon_fcgi.sock|fcgi://localhost/"
+```
 
 ## Setting up as service
 

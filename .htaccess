@@ -2,4 +2,16 @@ Options -Indexes
 
 RewriteEngine On
 
+RewriteRule "^\." - [F]
+RewriteRule "^LICENSE$" - [F]
+
 RewriteRule ^docs/([^/]+)/?$ /docs/index.sm?page=$1 [END,QSA]
+
+<IfModule mod_evasive20.c>
+  DOSHashTableSize 3097
+  DOSPageCount 2
+  DOSSiteCount 50
+  DOSPageInterval 1
+  DOSSiteInterval 1
+  DOSBlockingPeriod 600
+</IfModule>

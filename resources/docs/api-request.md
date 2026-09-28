@@ -1,6 +1,6 @@
 # sm.request
 
-`sm.request` is an API that exposes dictionary that contains information about current request such as request type.
+`sm.request` is an API that exposes dictionary that contains information about current request such as request type as string.
 
 <br />
 

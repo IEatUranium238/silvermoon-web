@@ -1,22 +1,30 @@
 local M = {}
 
+
 local docsList = {
-  { url = "getting-started", name = "Getting started",            folder = 0 },
-  { url = "first-steps",     name = "First steps",                folder = 0 },
-  { url = "conf-sec",        name = "Configuration and security", folder = 0 },
-  { url = "api",             name = "API reference list",         folder = 1 },
-  { url = "api-request",     name = "sm.request",                 folder = 1 },
-  { url = "api-header",      name = "sm.header",                  folder = 1 },
-  { url = "api-body",        name = "sm.body",                    folder = 1 },
-  { url = "api-params",        name = "sm.params",                    folder = 1 },
+  { url = "getting-started",      name = "Getting started",            folder = 0 },
+  { url = "first-steps",          name = "First steps",                folder = 0 },
+  { url = "conf-sec",             name = "Configuration and security", folder = 0 },
+  { url = "api",                  name = "API reference list",         folder = 0 },
+  { url = "api-request",          name = "sm.request",                 folder = 1 },
+  { url = "api-header",           name = "sm.header",                  folder = 1 },
+  { url = "api-body",             name = "sm.body",                    folder = 1 },
+  { url = "api-params",           name = "sm.params",                  folder = 1 },
+  { url = "api-set-http-code",    name = "sm.set_http_code",           folder = 2 },
+  { url = "api-set-mime-type",    name = "sm.set_mime_type",           folder = 2 },
+  { url = "api-set-header",       name = "sm.set_header",              folder = 2 },
+  { url = "api-delete-header",    name = "sm.delete_header",           folder = 2 },
+  { url = "api-redirect",         name = "sm.redirect",                folder = 2 },
+  { url = "api-halt",             name = "sm.halt",                    folder = 2 },
+  { url = "api-set-page-content", name = "sm.set-page-content",        folder = 2 },
 }
+
 
 local folderLists = {
   { id = 0, name = "Introduction" },
-  { id = 1, name = "API reference" },
+  { id = 1, name = "Request APIs" },
+  { id = 2, name = "Response APIs" },
 }
-
-local isProd = false
 
 function M.listDocs(page)
   for _, folder in pairs(folderLists) do

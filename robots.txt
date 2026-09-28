@@ -1,0 +1,14 @@
+# Robots.txt for Silvermoon's website
+# Web scrapers, please respect it, or at least prepend to care
+
+User-agent: *
+Allow: /
+Allow: /docs/
+
+Disallow: /resources/
+Disallow: /include/
+Disallow: /.git
+Disallow: /.gitignore
+Disallow: /*.lua$
+Disallow: /LICENSE
+Disallow: /testbed/
