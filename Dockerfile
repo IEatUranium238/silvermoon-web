@@ -25,6 +25,7 @@ COPY apache/site.conf /etc/apache2/sites-available/site.conf
 RUN a2ensite site
 
 # Preprocessor binary and site
+RUN mkdir -p /opt/sm
 RUN curl -L https://github.com/IEatUranium238/silvermoon/releases/latest/download/silvermoon \
     -o /opt/sm/silvermoon \
     && chmod +x /opt/sm/silvermoon
