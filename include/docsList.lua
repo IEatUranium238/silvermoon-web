@@ -16,11 +16,14 @@ local docsList = {
   { url = "api-delete-header",    name = "sm.delete_header",           folder = 2 },
   { url = "api-redirect",         name = "sm.redirect",                folder = 2 },
   { url = "api-halt",             name = "sm.halt",                    folder = 2 },
-  { url = "api-set-page-content", name = "sm.set-page-content",        folder = 2 },
-  { url = "api-escape-html",      name = "sm.escape-html",             folder = 3 },
-  { url = "api-unescape-html",    name = "sm.unescape-html",           folder = 3 },
-  { url = "api-escape-url",       name = "sm.escape-url",              folder = 3 },
-  { url = "api-unescape-url",     name = "sm.unescape-url",            folder = 3 },
+  { url = "api-set-page-content", name = "sm.set_page_content",        folder = 2 },
+  { url = "api-escape-html",      name = "sm.escape_html",             folder = 3 },
+  { url = "api-unescape-html",    name = "sm.unescape_html",           folder = 3 },
+  { url = "api-escape-url",       name = "sm.escape_url",              folder = 3 },
+  { url = "api-unescape-url",     name = "sm.unescape_url",            folder = 3 },
+  { url = "api-cookies",          name = "sm.cookies",                 folder = 4 },
+  { url = "api-set-cookie",       name = "sm.set_cookie",              folder = 4 },
+  { url = "api-delete-cookie",    name = "sm.delete_cookie",           folder = 4 },
 }
 
 
@@ -29,6 +32,7 @@ local folderLists = {
   { id = 1, name = "Request APIs" },
   { id = 2, name = "Response APIs" },
   { id = 3, name = "Security APIs" },
+  { id = 4, name = "Cookie APIs" },
 }
 
 function M.listDocs(page)

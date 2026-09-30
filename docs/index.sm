@@ -70,8 +70,8 @@
     </header>
 
     <lua>
-      package.path = package.path .. ";" .. sm.FOLDER .. "/../include/".. "?.lua"; render =
-      require("docsList");
+      require("lua-utf8"); package.path = package.path .. ";" .. sm.FOLDER ..
+      "/../include/".. "?.lua"; render = require("docsList");
     </lua>
 
     <main>
