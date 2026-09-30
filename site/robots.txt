@@ -13,3 +13,5 @@ Disallow: /*.lua$
 Disallow: /LICENSE
 Disallow: /testbed/
 Disallow: /conf/
+
+Sitemap: https://silvermoon.up.railway.app/sitemap.xml
