@@ -12,3 +12,4 @@ Disallow: /.gitignore
 Disallow: /*.lua$
 Disallow: /LICENSE
 Disallow: /testbed/
+Disallow: /conf/
