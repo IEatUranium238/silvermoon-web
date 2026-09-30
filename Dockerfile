@@ -35,5 +35,7 @@ COPY site/ /var/www/site/
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+RUN mkdir -p /var/run/apache2 /var/lock/apache2
+
 EXPOSE 8080
 CMD ["/start.sh"]
