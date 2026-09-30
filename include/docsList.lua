@@ -24,6 +24,8 @@ local docsList = {
   { url = "api-cookies",          name = "sm.cookies",                 folder = 4 },
   { url = "api-set-cookie",       name = "sm.set_cookie",              folder = 4 },
   { url = "api-delete-cookie",    name = "sm.delete_cookie",           folder = 4 },
+  { url = "api-version",          name = "sm.VERSION",                 folder = 5 },
+  { url = "api-folder",           name = "sm.FOLDER",                  folder = 5 },
 }
 
 
@@ -33,6 +35,7 @@ local folderLists = {
   { id = 2, name = "Response APIs" },
   { id = 3, name = "Security APIs" },
   { id = 4, name = "Cookie APIs" },
+  { id = 5, name = "Other APIs" },
 }
 
 function M.listDocs(page)
