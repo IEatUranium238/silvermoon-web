@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -21,7 +21,7 @@ RUN a2enmod proxy proxy_fcgi rewrite headers setenvif \
     && a2dissite 000-default \
     && echo 'Listen ${PORT}' > /etc/apache2/ports.conf
 
-COPY apache/site.conf /etc/apache2/sites-available/site.conf
+COPY apache/site.conf /etc/apache2/apache2.conf
 RUN a2ensite site
 
 # Preprocessor binary and site
