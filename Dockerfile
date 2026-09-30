@@ -10,11 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Rocks
-COPY rocks.txt /tmp/rocks.txt
-RUN while read -r rock ver; do \
-      [ -z "$rock" ] && continue; \
-      luarocks --lua-version 5.1 install "$rock" $ver || exit 1; \
-    done < /tmp/rocks.txt
+RUN luarocks install lunamark
 
 # Apache
 RUN a2enmod proxy proxy_fcgi rewrite headers setenvif \

@@ -3,7 +3,7 @@ set -eu
 
 export PORT="${PORT:-8080}"
 
-export SM_USE_RISKY_OPEN="true"
+export SM_ENABLE_RISKY_OPEN="true"
 
 export APACHE_RUN_DIR="/var/run/apache2"
 export APACHE_LOCK_DIR="/var/lock/apache2"
