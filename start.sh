@@ -5,14 +5,19 @@ export PORT="${PORT:-8080}"
 
 export SM_USE_RISKY_OPEN="true"
 
-export APACHE_RUN_DIR=/var/run/apache2
-export APACHE_LOCK_DIR=/var/lock/apache2
-export APACHE_PID_FILE=/var/run/apache2/apache2.pid
-export APACHE_RUN_USER=www-data
-export APACHE_RUN_GROUP=www-data
+export APACHE_RUN_DIR="/var/run/apache2"
+export APACHE_LOCK_DIR="/var/lock/apache2"
+export APACHE_PID_FILE="/var/run/apache2/apache2.pid"
+export APACHE_RUN_USER="www-data"
+export APACHE_RUN_GROUP="www-data"
+export APACHE_LOG_DIR="/var/log/apache2"
 
-mkdir -p "$APACHE_RUN_DIR" "$APACHE_LOCK_DIR"
+mkdir -p "$APACHE_RUN_DIR"
+mkdir -p "$APACHE_LOCK_DIR"
+mkdir -p "$APACHE_LOG_DIR"
 
+a2dissite 000-default.conf >/dev/null 2>&1 || true
+a2ensite site >/dev/null 2>&1 || true
 sed -i "s/^Listen .*/Listen ${PORT}/" /etc/apache2/ports.conf
 
 echo "Starting Silvermoon..." >&2
