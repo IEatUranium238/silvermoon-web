@@ -1,34 +1,17 @@
+local asteroid = require("asteroid")
 local M = {}
 
 function M.render()
   print('<div class=\"side\">')
 
-  local featuresList = {
-    "Familiar", "Powered by Lua", "Plug in", "More than web pages"
-  }
-
-  local featuresTextList = {
-    [[
-  No new syntax to learn. Write plain HTML with Lua embedded in &lt;lua&gt; tags. <br />
-  If you know HTML and Lua, you already know 90% of Silvermoon.
-  ]],
-    [[
-  Use Lua you already know with extra APIs provided by Silvermoon. <br />
-  Meanwhile gaining performance from being powered by LuaJIT.
-  ]],
-    [[
-  Drop into any FastCGI-compatible server. <br />
-  Use LuaRocks packages and include external Lua files. <br />
-  Silvermoon respects your decisions.
-  ]],
-    [[
-  Web pages, APIs, whatever. <br />
-  Silvermoon is flexible enough to power your whole backend.
-  ]]
-  }
-
-  local featuresCodeList = {
-    [[
+  local features = {
+    {
+      title = "Familiar",
+      description = [[
+      No new syntax to learn. Write plain HTML with Lua embedded in &lt;lua&gt; tags. <br />
+      If you know HTML and Lua, you already know 90% of Silvermoon.
+      ]],
+      code = [[
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +24,15 @@ function M.render()
   </h1>
   <p>Current time: <lua>return os.date("%Y-%m-%d %H:%M:%S")</lua></p>
 </body>
-</html>]],
-
-    [[
+</html>]]
+    },
+    {
+      title = "Powered by Lua",
+      description = [[
+      Use Lua you already know with extra APIs provided by Silvermoon. <br />
+      Meanwhile gaining performance from being powered by LuaJIT.
+      ]],
+      code = [[
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,9 +54,16 @@ function M.render()
     end
   </lua>
 </body>
-</html>]],
-
-    [[
+</html>]]
+    },
+    {
+      title = "Plug in",
+      description = [[
+      Drop into any FastCGI-compatible server. <br />
+      Use LuaRocks packages and include external Lua files. <br />
+      Silvermoon respects your decisions.
+      ]],
+      code = [[
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,9 +83,15 @@ function M.render()
     </lua>
   </ul>
 </body>
-</html>]],
-
-    [[
+</html>]]
+    },
+    {
+      title = "More than web pages",
+      description = [[
+      Web pages, APIs, whatever. <br />
+      Silvermoon is flexible enough to power your whole backend.
+      ]],
+      code = [[
 <lua>
   local json = require("cjson")
   local method = sm.request.REQUEST_METHOD
@@ -111,25 +113,36 @@ function M.render()
     })
   end
 </lua>]]
+    }
   }
 
-  for index, val in ipairs(featuresList) do
+  for _, item in ipairs(features) do
+    item.code = sm.escape_html(item.code)
+  end
+
+  local item_template = asteroid.make_template([[
+    <div id="feature@index!" @extra!>
+      <p class="code">print(features[@index!])</p>
+      <h2>@title!</h2>
+      <p>
+        @description!
+      </p>
+    </div>
+  ]])
+
+  for index, item in ipairs(features) do
     local extra = "";
 
     if index ~= 1 then
       extra = 'class="hidden"'
     end
 
-    print([[
-    <div id="feature]] .. index .. [[" ]] .. extra .. [[>
-      <p class="code">print(features[]] .. index .. [[])</p>
-      <h2>]] .. val .. [[</h2>
-      <p>
-      ]] .. featuresTextList[index] .. [[
-      </p>
-    </div>
-    ]]
-    )
+    print(item_template:generate({
+      extra = extra,
+      index = index,
+      title = item.title,
+      description = item.description
+    }))
   end
 
   print([[
@@ -144,18 +157,24 @@ function M.render()
   ]])
   print("</div>")
 
-  for index, val in ipairs(featuresCodeList) do
+  local code_template = asteroid.make_template([[
+    <pre aria-hidden="true" id="code@index!" @extra!>
+    <code class="language-html">@code!</code>
+    </pre>
+    ]])
+
+  for index, item in ipairs(features) do
     local extra = "";
 
     if index ~= 1 then
       extra = 'class="hidden"'
     end
 
-    print([[
-    <pre aria-hidden="true" id="code]] ..
-    index .. [[" ]] .. extra .. [[><code class="language-html">]] .. sm.escape_html(val) .. [[</code></pre>
-    ]]
-    )
+    print(code_template:generate({
+      extra = extra,
+      index = index,
+      code = item.code
+    }))
   end
 end
 
