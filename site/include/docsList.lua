@@ -1,4 +1,4 @@
-local asteriod = require("asteriod")
+local asteroid = require("asteroid")
 local M = {}
 
 local docsList = {
@@ -38,14 +38,14 @@ local folderLists = {
   { id = 5, name = "Other APIs" },
 }
 
-local folder_template = asteriod.make_template([[
+local folder_template = asteroid.make_template([[
   <button class="big-font doc-btn @open_extra folder-btn-@folder_id!">@icon! @folder_name </button>
   <div class="doc-folder doc-folder-@folder_id @hidden_extra!>
   @content!
   </div>
 ]])
 
-local link_template = asteriod.make_template([[
+local link_template = asteroid.make_template([[
   <a class="doc-item big-font @extra!" href="/docs/@url!"> @name!</a>
 ]])
 
