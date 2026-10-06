@@ -1,5 +1,5 @@
+local asteriod = require("asteriod")
 local M = {}
-
 
 local docsList = {
   { url = "getting-started",      name = "Getting started",            folder = 0 },
@@ -38,6 +38,17 @@ local folderLists = {
   { id = 5, name = "Other APIs" },
 }
 
+local folder_template = asteriod.make_template([[
+  <button class="big-font doc-btn @open_extra folder-btn-@folder_id!">@icon! @folder_name </button>
+  <div class="doc-folder doc-folder-@folder_id @hidden_extra!>
+  @content!
+  </div>
+]])
+
+local link_template = asteriod.make_template([[
+  <a class="doc-item big-font @extra!" href="/docs/@url!"> @name!</a>
+]])
+
 function M.listDocs(page)
   for _, folder in pairs(folderLists) do
     local folderHasPage = false
@@ -50,25 +61,7 @@ function M.listDocs(page)
     end
 
     local extra = ""
-    local icon = '<i class="bi bi-caret-right-fill" aria-hidden="true"></i>'
-
-    if (folderHasPage) then
-      extra = " open"
-      icon = '<i class="bi bi-caret-down-fill" aria-hidden="true"></i>'
-    end
-
-    print('<button class="big-font doc-btn' ..
-      extra .. ' folder-btn-' .. folder.id .. '">' .. icon .. " " .. folder.name .. '</button>')
-
-    if (not folderHasPage) then
-      extra = "hidden"
-    else
-      extra = ""
-    end
-
-    print('<div class="doc-folder doc-folder-' .. folder.id .. ' ' .. extra .. '">')
-
-    extra = ""
+    local contentHTML = ""
 
     for _, doc in pairs(docsList) do
       if (doc.url == page) then
@@ -76,22 +69,41 @@ function M.listDocs(page)
       end
 
       if doc.folder == folder.id then
-        print(
-          '<a class="doc-item big-font ' .. extra .. '" href="/docs/' .. doc.url .. '">' .. doc.name .. '</a>'
-        )
+        contentHTML = contentHTML .. link_template:generate({
+          extra = extra,
+          url = doc.url,
+          name = doc.name
+        })
       end
 
       extra = ""
     end
 
-    print('</div>')
+    local hidden = ""
+    local icon = '<i class="bi bi-caret-right-fill" aria-hidden="true"></i>'
+
+    if (folderHasPage) then
+      extra = " open"
+      icon = '<i class="bi bi-caret-down-fill" aria-hidden="true"></i>'
+    else
+      hidden = "hidden"
+    end
+
+    print(folder_template:generate({
+      open_extra = extra,
+      folder_id = folder.id,
+      icon = icon,
+      folder_name = folder.name,
+      hidden_extra = hidden,
+      content = contentHTML
+    }))
   end
 end
 
 function M.renderFile(page)
   local lunamark = require("lunamark")
 
-  local file, msg, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
+  local file, _, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
   local markdown_input = "# Failed to load this documentation page!\n"
 
   if (file ~= nil) then
