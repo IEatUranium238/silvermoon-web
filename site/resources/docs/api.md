@@ -37,6 +37,13 @@ Click onto API's name to get redirected to detailed page about it!
 - [`sm.set_cookie`](/docs/api-set-cookie) - set cookie
 - [`sm.delete_cookie`](/docs/api-delete-cookie) - remove cookie
 
+## Transport
+
+- [`sm.transport.get`](/docs/api-transport-get) - get a value from transport
+- [`sm.transport.set`](/docs/api-transport-set) - set a value in transport
+- [`sm.transport.delete`](/docs/api-transport-delete) - delete a value from transport
+- [`sm.transport.exists`](/docs/api-transport-exists) - check if value exists in transport
+
 ## Other
 
 - [`sm.VERSION`](/docs/api-version) - silvermoon's version
