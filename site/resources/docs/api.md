@@ -12,6 +12,7 @@ Click onto API's name to get redirected to detailed page about it!
 - [`sm.header`](/docs/api-header) - http headers
 - [`sm.body`](/docs/api-body) - request body
 - [`sm.params`](/docs/api-params) - url params
+- [`sm.form_contents`](/docs/api-form-contents) - form's submited content
 
 ## Response
 

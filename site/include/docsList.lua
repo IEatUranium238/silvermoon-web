@@ -10,6 +10,7 @@ local docsList = {
   { url = "api-header",           name = "sm.header",                  folder = 1 },
   { url = "api-body",             name = "sm.body",                    folder = 1 },
   { url = "api-params",           name = "sm.params",                  folder = 1 },
+  { url = "api-form-contents",    name = "sm.form_contents",           folder = 1 },
   { url = "api-set-http-code",    name = "sm.set_http_code",           folder = 2 },
   { url = "api-set-mime-type",    name = "sm.set_mime_type",           folder = 2 },
   { url = "api-set-header",       name = "sm.set_header",              folder = 2 },
@@ -24,8 +25,8 @@ local docsList = {
   { url = "api-cookies",          name = "sm.cookies",                 folder = 4 },
   { url = "api-set-cookie",       name = "sm.set_cookie",              folder = 4 },
   { url = "api-delete-cookie",    name = "sm.delete_cookie",           folder = 4 },
-  { url = "api-version",          name = "sm.VERSION",                 folder = 5 },
-  { url = "api-folder",           name = "sm.FOLDER",                  folder = 5 },
+  { url = "api-version",          name = "sm.VERSION",                 folder = 6 },
+  { url = "api-folder",           name = "sm.FOLDER",                  folder = 6 },
 }
 
 
@@ -35,7 +36,9 @@ local folderLists = {
   { id = 2, name = "Response APIs" },
   { id = 3, name = "Security APIs" },
   { id = 4, name = "Cookie APIs" },
-  { id = 5, name = "Other APIs" },
+  { id = 5, name = "Transport APIs" },
+  { id = 6, name = "Other APIs" },
+  { id = 7, name = "Silvermoon extras" },
 }
 
 local folder_template = asteroid.make_template([[
