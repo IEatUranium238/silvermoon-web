@@ -50,7 +50,7 @@ function M.render()
 
     for _, post in posts do
       print('<a href="/posts/' .. post.url .. '">'
-      .. post.title "</a>)
+      .. post.title .. '</a>')
     end
   </lua>
 </body>
@@ -77,7 +77,7 @@ function M.render()
       local db = sqlite3.open("users.db")
 
       for row in db:nrows("SELECT id, name, age FROM users") do
-        print(string.format("<li>ID: %i <br />Name: %s <br />Age: %i",
+        print(string.format("<li>ID: %i <br />Name: %s <br />Age: %i </li>",
         row.id, row.name, row.age))
       end
     </lua>
