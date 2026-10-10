@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
       apache2 ca-certificates curl \
-      lua5.1 liblua5.1 libluajit-5.1-2 luarocks \
+      lua5.1 luarocks \
       build-essential git unzip \
     && rm -rf /var/lib/apt/lists/*
 
