@@ -40,7 +40,7 @@ local folderLists = {
 
 local folder_template = asteroid.make_template([[
   <button class="big-font doc-btn @open_extra folder-btn-@folder_id!">@icon! @folder_name </button>
-  <div class="doc-folder doc-folder-@folder_id @hidden_extra!>
+  <div class="doc-folder doc-folder-@folder_id @hidden_extra!">
   @content!
   </div>
 ]])
