@@ -19,3 +19,4 @@ It requires following to run:
 - Apache
 - Silvermoon
 - Lunamark library (via luarocks)
+- Asteroid library (via luarocks)
