@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Rocks
 RUN luarocks install lunamark
+RUN luarocks install asteroid
 
 # Apache
 RUN a2enmod proxy proxy_fcgi rewrite headers setenvif \
