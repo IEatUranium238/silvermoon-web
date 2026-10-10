@@ -1,15 +1,18 @@
+local asteroid = require("asteroid")
 local M = {}
-
 
 local docsList = {
   { url = "getting-started",      name = "Getting started",            folder = 0 },
   { url = "first-steps",          name = "First steps",                folder = 0 },
   { url = "conf-sec",             name = "Configuration and security", folder = 0 },
   { url = "api",                  name = "API reference list",         folder = 0 },
+
   { url = "api-request",          name = "sm.request",                 folder = 1 },
   { url = "api-header",           name = "sm.header",                  folder = 1 },
   { url = "api-body",             name = "sm.body",                    folder = 1 },
   { url = "api-params",           name = "sm.params",                  folder = 1 },
+  { url = "api-form-contents",    name = "sm.form_contents",           folder = 1 },
+
   { url = "api-set-http-code",    name = "sm.set_http_code",           folder = 2 },
   { url = "api-set-mime-type",    name = "sm.set_mime_type",           folder = 2 },
   { url = "api-set-header",       name = "sm.set_header",              folder = 2 },
@@ -17,15 +20,23 @@ local docsList = {
   { url = "api-redirect",         name = "sm.redirect",                folder = 2 },
   { url = "api-halt",             name = "sm.halt",                    folder = 2 },
   { url = "api-set-page-content", name = "sm.set_page_content",        folder = 2 },
+
   { url = "api-escape-html",      name = "sm.escape_html",             folder = 3 },
   { url = "api-unescape-html",    name = "sm.unescape_html",           folder = 3 },
   { url = "api-escape-url",       name = "sm.escape_url",              folder = 3 },
   { url = "api-unescape-url",     name = "sm.unescape_url",            folder = 3 },
+
   { url = "api-cookies",          name = "sm.cookies",                 folder = 4 },
   { url = "api-set-cookie",       name = "sm.set_cookie",              folder = 4 },
   { url = "api-delete-cookie",    name = "sm.delete_cookie",           folder = 4 },
-  { url = "api-version",          name = "sm.VERSION",                 folder = 5 },
-  { url = "api-folder",           name = "sm.FOLDER",                  folder = 5 },
+
+  { url = "api-transport-set",    name = "sm.transport.set",           folder = 5 },
+  { url = "api-transport-get",    name = "sm.transport.get",           folder = 5 },
+  { url = "api-transport-exists", name = "sm.transport.exists",        folder = 5 },
+  { url = "api-transport-delete", name = "sm.transport.delete",        folder = 5 },
+
+  { url = "api-version",          name = "sm.VERSION",                 folder = 6 },
+  { url = "api-folder",           name = "sm.FOLDER",                  folder = 6 },
 }
 
 
@@ -35,8 +46,20 @@ local folderLists = {
   { id = 2, name = "Response APIs" },
   { id = 3, name = "Security APIs" },
   { id = 4, name = "Cookie APIs" },
-  { id = 5, name = "Other APIs" },
+  { id = 5, name = "Transport APIs" },
+  { id = 6, name = "Other APIs" }
 }
+
+local folder_template = asteroid.make_template([[
+  <button class="big-font doc-btn @open_extra folder-btn-@folder_id!">@icon! @folder_name </button>
+  <div class="doc-folder doc-folder-@folder_id @hidden_extra!">
+  @content!
+  </div>
+]])
+
+local link_template = asteroid.make_template([[
+  <a class="doc-item big-font @extra!" href="/docs/@url!"> @name!</a>
+]])
 
 function M.listDocs(page)
   for _, folder in pairs(folderLists) do
@@ -50,25 +73,7 @@ function M.listDocs(page)
     end
 
     local extra = ""
-    local icon = '<i class="bi bi-caret-right-fill" aria-hidden="true"></i>'
-
-    if (folderHasPage) then
-      extra = " open"
-      icon = '<i class="bi bi-caret-down-fill" aria-hidden="true"></i>'
-    end
-
-    print('<button class="big-font doc-btn' ..
-      extra .. ' folder-btn-' .. folder.id .. '">' .. icon .. " " .. folder.name .. '</button>')
-
-    if (not folderHasPage) then
-      extra = "hidden"
-    else
-      extra = ""
-    end
-
-    print('<div class="doc-folder doc-folder-' .. folder.id .. ' ' .. extra .. '">')
-
-    extra = ""
+    local contentHTML = ""
 
     for _, doc in pairs(docsList) do
       if (doc.url == page) then
@@ -76,22 +81,41 @@ function M.listDocs(page)
       end
 
       if doc.folder == folder.id then
-        print(
-          '<a class="doc-item big-font ' .. extra .. '" href="/docs/' .. doc.url .. '">' .. doc.name .. '</a>'
-        )
+        contentHTML = contentHTML .. link_template:generate({
+          extra = extra,
+          url = doc.url,
+          name = doc.name
+        })
       end
 
       extra = ""
     end
 
-    print('</div>')
+    local hidden = ""
+    local icon = '<i class="bi bi-caret-right-fill" aria-hidden="true"></i>'
+
+    if (folderHasPage) then
+      extra = " open"
+      icon = '<i class="bi bi-caret-down-fill" aria-hidden="true"></i>'
+    else
+      hidden = "hidden"
+    end
+
+    print(folder_template:generate({
+      open_extra = extra,
+      folder_id = folder.id,
+      icon = icon,
+      folder_name = folder.name,
+      hidden_extra = hidden,
+      content = contentHTML
+    }))
   end
 end
 
 function M.renderFile(page)
   local lunamark = require("lunamark")
 
-  local file, msg, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
+  local file, _, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
   local markdown_input = "# Failed to load this documentation page!\n"
 
   if (file ~= nil) then

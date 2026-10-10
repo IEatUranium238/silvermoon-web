@@ -111,7 +111,7 @@ DirectoryIndex index.sm
 
 To use UNIX sockets with Silvermoon set up following:
 
-1. Set `SM_USE_UNIXSOCKS` env variable to "true" (A string, not a boolean)
+1. Set `SM_USE_UNIXSOCKS` env variable to "true"
 2. For previous config change SetHandler to
 
 ```text
