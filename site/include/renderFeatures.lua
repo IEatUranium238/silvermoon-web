@@ -48,7 +48,7 @@ function M.render()
       {url = "tips-and-tricks", title = "Tips & tricks"}
     }
 
-    for _, post in posts do
+    for _, post in pairs(posts) do
       print('<a href="/posts/' .. post.url .. '">'
       .. post.title .. '</a>')
     end
