@@ -12,7 +12,7 @@ Contributions welcome. If you wish to improve the website, update the documentat
 
 ## Running it
 
-We are using railway to deploy our website.
+We are using Railway as hosting to deploy our website.
 
 It requires following to run:
 
