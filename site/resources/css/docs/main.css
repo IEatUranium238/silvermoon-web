@@ -64,7 +64,7 @@ aside {
     justify-content: left;
 
     width: 100%;
-
+    color: var(--cl-txt);
     &.blue {
       color: var(--cl-ac) !important;
     }

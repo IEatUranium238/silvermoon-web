@@ -122,8 +122,6 @@ SetHandler "proxy:unix:/var/run/silvermoon_fcgi.sock|fcgi://localhost/"
 
 ### Linux (systemd)
 
-<br />
-
 Create following file at `/etc/systemd/system/silvermoon.service`:
 
 ```ini
@@ -166,8 +164,6 @@ To run, execute following:
 sudo systemctl enable silvermoon
 sudo systemctl start silvermoon
 ```
-
-<br />
 
 ### Windows (powershell)
 

@@ -42,7 +42,7 @@ p {
 }
 
 a {
-  color: var(--cl-tx);
+  color: var(--cl-ac);
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.25s ease-in-out;

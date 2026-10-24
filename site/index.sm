@@ -164,8 +164,8 @@
       </nav>
     </div>
 
-    <script src="./resources/js/changeMode.js"></script>
-    <script src="./resources/js/featureListNav.js" defer></script>
+    <script src="/resources/js/changeMode.js"></script>
+    <script src="/resources/js/featureListNav.js" defer></script>
     <script src="/resources/js/menu.js" defer></script>
     <script defer>
       hljs.highlightAll();

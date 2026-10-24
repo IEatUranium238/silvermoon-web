@@ -41,6 +41,10 @@ header {
     @media (max-width: 770px) {
       display: none;
     }
+
+    a {
+      color: var(--cl-txt);
+    }
   }
 
   #headerBurger {
@@ -84,6 +88,7 @@ header {
     a {
       width: 100%;
       justify-content: left;
+      color: var(--cl-txt);
     }
   }
 
