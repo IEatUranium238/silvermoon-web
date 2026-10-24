@@ -42,6 +42,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"></script>
+
+    <!-- Google stuff -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Silvermoon",
+        "url": "https://silvermoon.up.railway.app"
+      }
+    </script>
   </head>
   <body>
     <header>
