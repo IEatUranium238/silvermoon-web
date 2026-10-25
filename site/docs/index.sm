@@ -105,7 +105,8 @@
         <lua> render.renderFile(sm.params.page) </lua>
       </article>
 
-      <div class="article-headers desktop-article-headers">
+      <div class="article-headers">
+        <h2>On this page</h2>
         <lua> render.listHeaders() </lua>
       </div>
     </main>
@@ -179,8 +180,10 @@
     <script src="/resources/js/changeMode.js"></script>
     <script src="/resources/js/sidebarToggle.js" defer></script>
     <script src="/resources/js/menu.js" defer></script>
+    <script src="/resources/js/scrollSpy.js" defer></script>
     <script defer>
       hljs.highlightAll();
     </script>
   </body>
 </html>
+
