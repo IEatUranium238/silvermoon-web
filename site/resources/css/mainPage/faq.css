@@ -1,0 +1,51 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-top: 1.5px solid var(--cl-br);
+  gap: 5px;
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 1.2rem;
+  }
+
+  p {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+  }
+
+  @media (max-width: 770px) {
+    gap: 15px;
+  }
+
+  details {
+    border-radius: 5px;
+    border: 1.5px solid var(--cl-br);
+    width: 100%;
+    max-width: 850px;
+
+
+    summary {
+      list-style: none;
+      font-size: 1.7rem;
+      
+      padding: 5px 8px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 1.5rem;
+      padding: 5px 8px;
+      border-top: 1.5px solid var(--cl-br);
+
+      a {
+        font-size: 1.6rem;
+        color: var(--cl-ac);
+      }
+    }
+  }
+
+}

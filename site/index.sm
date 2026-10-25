@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="/resources/css/mainPage/hero.css" />
     <link rel="stylesheet" href="/resources/css/mainPage/features.css" />
+    <link rel="stylesheet" href="/resources/css/mainPage/faq.css" />
 
     <!-- Other sources -->
     <!-- Bootstrap icons -->
@@ -111,6 +112,75 @@
         <lua>
           local renderer = require("include.renderFeatures"); renderer.render();
         </lua>
+      </section>
+
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How does Silvermoon work?</summary>
+          <p>
+            Silvermoon is a HTML preprocessor. It takes your source file,
+            executes Lua code embedded in Lua tags, and outputs generated HTML.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I use external Lua packages?</summary>
+          <p>
+            Yes! Silvermoon supports external Lua modules and packages. This
+            lets you reuse existing libraries and organize your project.
+          </p>
+        </details>
+
+        <details>
+          <summary>What version of Lua does Silvermoon use?</summary>
+          <p>
+            Silvermoon uses Lua 5.1 via LuaJIT. LuaJIT allows for faster code
+            executes as it compiles Lua to native CPU instructions on the fly.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I contribute to Silvermoon?</summary>
+          <p>
+            Contributions are welcome! You can suggest features, report bugs,
+            improve documentation or submit code changes. Help improve the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon preprocessor</a
+            >
+            or the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon-web"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon website</a
+            >.
+          </p>
+        </details>
+
+        <details>
+          <summary>I found a bug or other issue in Silvermoon</summary>
+          <p>
+            Click one of these links to file an issue for: <br/>
+            <a
+              href="https://github.com/IEatUranium238/silvermoon/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon preprocessor</a
+            >
+            or the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon-web/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon website</a
+            >.
+          </p>
+        </details>
       </section>
     </main>
 
