@@ -24,7 +24,7 @@ This documentation assumes you have following knowledge:
 - Website basics (HTML,CSS and JS) skills
 - Moderate Lua programming skills
 
-## Installation {#Install}
+## Installation
 
 ### Precompiled binaries
 
@@ -137,7 +137,7 @@ EnvironmentFile=/etc/silvermoon/silvermoon.env
 
 # This is needed to avoid race condition with UNIX socket, remove if you don't plan on using that
 ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; for i in $(seq 1 40); do [ -S /var/run/silvermoon_fcgi.sock ] && exit 0; sleep 0.25; done; echo "socket never appeared" >&2; exit 1'
-ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; exec /bin/chmod 777 /var/run/silvermoon_fcgi.sock'
+ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; exec /bin/chmod 640 /var/run/silvermoon_fcgi.sock'
 ExecStartPost=/bin/bash -c '[ "$SM_USE_UNIXSOCKS" = "true" ] || exit 0; exec /bin/chgrp "${SM_SOCK_GROUP:-www-data}" /var/run/silvermoon_fcgi.sock'
 
 Restart=on-failure

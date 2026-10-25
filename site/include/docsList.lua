@@ -1,4 +1,6 @@
 local asteroid = require("asteroid")
+local lunamark = require("lunamark")
+local util = require("lunamark.util")
 local M = {}
 
 local docsList = {
@@ -39,7 +41,6 @@ local docsList = {
   { url = "api-folder",           name = "sm.FOLDER",                  folder = 6 },
 }
 
-
 local folderLists = {
   { id = 0, name = "Introduction" },
   { id = 1, name = "Request APIs" },
@@ -50,6 +51,8 @@ local folderLists = {
   { id = 6, name = "Other APIs" }
 }
 
+local this_headers = {}
+
 local folder_template = asteroid.make_template([[
   <button class="big-font doc-btn @open_extra folder-btn-@folder_id!">@icon! @folder_name </button>
   <div class="doc-folder doc-folder-@folder_id @hidden_extra!">
@@ -58,14 +61,51 @@ local folder_template = asteroid.make_template([[
 ]])
 
 local link_template = asteroid.make_template([[
-  <a class="doc-item big-font @extra!" href="/docs/@url!"> @name!</a>
+  <a class="doc-item  big-font @extra!" href="/docs/@url!"> @name!</a>
 ]])
 
+local contents_item_template = asteroid.make_template([[
+<li id="@id!"><a href="#@link!">@data!</a></li>
+]])
+
+
+
+function M.listHeaders()
+  local level = 2 -- h2
+  print("<ul>")
+
+  for k, v in ipairs(this_headers) do
+    if k ~= 1 then -- skip h1 title
+      if v.level > level then
+        for _ = 1, v.level - level do
+          print("<ul>")
+        end
+      elseif v.level < level then
+        for _ = 1, level - v.level do
+          print("</ul>")
+        end
+      end
+
+      level = v.level
+
+      print(contents_item_template:generate({
+        link = v.href,
+        data = v.content,
+        id = v.href
+      }))
+    end
+  end
+
+  for _ = 1, level do
+    print("</ul>")
+  end
+end
+
 function M.listDocs(page)
-  for _, folder in pairs(folderLists) do
+  for _, folder in ipairs(folderLists) do
     local folderHasPage = false
 
-    for _, doc in pairs(docsList) do
+    for _, doc in ipairs(docsList) do
       if doc.folder == folder.id and doc.url == page then
         folderHasPage = true
         break
@@ -75,7 +115,7 @@ function M.listDocs(page)
     local extra = ""
     local contentHTML = ""
 
-    for _, doc in pairs(docsList) do
+    for _, doc in ipairs(docsList) do
       if (doc.url == page) then
         extra = 'blue'
       end
@@ -113,8 +153,6 @@ function M.listDocs(page)
 end
 
 function M.renderFile(page)
-  local lunamark = require("lunamark")
-
   local file, _, code = io.open(sm.FOLDER .. "/../resources/docs/" .. page .. ".md", "rb")
   local markdown_input = "# Failed to load this documentation page!\n"
 
@@ -129,7 +167,58 @@ function M.renderFile(page)
     end
   end
 
+
+  local used_ids = {}
+
+  local function slugify(text)
+    text = text:lower()
+    text = text:gsub("<[^>]*>", "")
+    text = text:gsub("&[%w#]+;", "")
+    text = text:gsub("[^%w%s%-_]", "")
+    text = text:gsub("%s+", "-")
+    text = text:gsub("%-+", "-")
+    text = text:gsub("^%-+", ""):gsub("%-+$", "")
+    return text
+  end
+
   local writer = lunamark.writer.html.new()
+  local original_header = writer.header
+
+  writer.header = function(content, level, attrs)
+    attrs = attrs or {}
+
+    local id = attrs.id
+
+    if not id or id == "" then
+      local plain = util.rope_to_string(content)
+      id = slugify(plain)
+
+      if id == "" then
+        id = "section"
+      end
+
+      local base = id
+      local count = 1
+
+      while used_ids[id] do
+        count = count + 1
+        id = base .. "-" .. count
+      end
+
+      attrs.id = id
+    end
+
+    used_ids[id] = true
+
+    table.insert(this_headers, {
+      level = level,
+      content = util.rope_to_string(content),
+      href = id
+    })
+
+    return original_header(content, level, attrs)
+  end
+
   local parse = lunamark.reader.markdown.new(writer, {
     smart = true,
     definition_lists = true,

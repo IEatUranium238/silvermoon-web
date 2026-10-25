@@ -64,7 +64,7 @@ aside {
     justify-content: left;
 
     width: 100%;
-    color: var(--cl-txt);
+
     &.blue {
       color: var(--cl-ac) !important;
     }
@@ -100,4 +100,55 @@ article {
 
   overflow: auto;
   scrollbar-width: thin;
+}
+
+.article-headers {
+  display: flex;
+  position: sticky;
+  top: 71.33px;
+  flex-direction: column;
+
+  padding: 12px;
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+  }
+
+  ul ul {
+    padding-left: 16px;
+  }
+
+  li {
+    margin: 2px 0;
+    min-width: 0;
+  }
+
+  a {
+    display: block;
+    padding: 5px 8px;
+    text-decoration: none;
+    border-radius: 5px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  a:hover {
+    color: var(--cl-ac);
+  }
+}
+
+.desktop-article-headers {
+  @media (max-width: 770px) {
+    display: none;
+  }
 }

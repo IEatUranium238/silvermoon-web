@@ -42,9 +42,6 @@ header {
       display: none;
     }
 
-    a {
-      color: var(--cl-txt);
-    }
   }
 
   #headerBurger {

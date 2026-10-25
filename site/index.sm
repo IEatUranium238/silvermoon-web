@@ -62,7 +62,7 @@
         <a href="/docs"
           ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
         >
-        <a href="/docs/getting-started/#Install"
+        <a href="/docs/getting-started/#installation"
           ><i class="bi bi-download" aria-hidden="true"></i>Install</a
         >
         <a href="https://github.com/IEatUranium238/silvermoon"
@@ -165,7 +165,7 @@
         <a href="/docs" class="big-font"
           ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
         >
-        <a href="/docs/getting-started/#Install" class="big-font"
+        <a href="/docs/getting-started/#installation" class="big-font"
           ><i class="bi bi-download" aria-hidden="true"></i>Install</a
         >
         <a href="https://github.com/IEatUranium238/silvermoon" class="big-font"
