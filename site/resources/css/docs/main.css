@@ -101,3 +101,61 @@ article {
   overflow: auto;
   scrollbar-width: thin;
 }
+
+.article-headers {
+  display: flex;
+  position: sticky;
+  top: 71.33px;
+  flex-direction: column;
+
+  padding: 12px;
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+  }
+
+  ul ul {
+    padding-left: 16px;
+  }
+
+  li {
+    margin: 2px 0;
+    min-width: 0;
+  }
+
+  li::marker {
+    content: "";
+  }
+
+  a {
+    display: block;
+    padding: 5px 8px;
+    text-decoration: none;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-left: 5px solid transparent;
+
+    &.active {
+      border-left: 5px solid var(--cl-ac);
+      padding-left: -10px;
+    }
+  }
+
+  a:hover {
+    color: var(--cl-ac);
+  }
+
+  @media (max-width: 770px) {
+    display: none;
+  }
+}

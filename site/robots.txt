@@ -4,6 +4,9 @@
 User-agent: *
 Allow: /
 Allow: /docs/
+Allow: /logo/
+Allow: /mascot/
+Allow: /privacy/
 
 Disallow: /resources/
 Disallow: /include/

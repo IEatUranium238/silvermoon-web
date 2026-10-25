@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- Hello there! You have opened page's html source! This website is open source btw, so check out github page in footer for full code! -->
+<html lang="en" data-theme="vs-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silvermoon</title>
+    <meta name="description" content="A HTML preprocessor with power of lua." />
+    <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico" />
+
+    <meta
+      name="google-site-verification"
+      content="vCZFGHiY9HGl0N7785E_M9J2q-rbzslKDbHvRpGQvsw"
+    />
+
+    <!-- Connect style sheets -->
+    <link rel="stylesheet" href="/resources/css/shared/global.css" />
+    <link rel="stylesheet" href="/resources/css/shared/header.css" />
+    <link rel="stylesheet" href="/resources/css/shared/footer.css" />
+
+    <link rel="stylesheet" href="/resources/css/docs/main.css" />
+    <link rel="stylesheet" href="/resources/css/docs/markdown.css" />
+
+    <!-- Other sources -->
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"></script>
+
+    <!-- Google stuff -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Silvermoon",
+        "url": "https://silvermoon.up.railway.app"
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="logo-container" href="/" aria-label="Go to main page">
+        <img src="/resources/images/logo.svg" alt="Silvermoon logo" />
+      </a>
+      <nav>
+        <a href="/docs"
+          ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
+        >
+        <a href="/docs/getting-started/#installation"
+          ><i class="bi bi-download" aria-hidden="true"></i>Install</a
+        >
+        <a href="https://github.com/IEatUranium238/silvermoon"
+          ><i class="bi bi-github" aria-hidden="true"></i>GitHub</a
+        >
+        <button
+          class="invisible square change-mode-button"
+          aria-label="Change theme button"
+        >
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
+      </nav>
+      <button class="invisible square" id="headerBurger" aria-label="Open menu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <main>
+      <article class="markdown">
+        <h1>Silvermoon's website privacy policy</h1>
+        <p>Last updated: October 24, 2026</p>
+        <br />
+        <p>
+          This Privacy Policy explains what information Silvermoon's website
+          ("we", "us", "our"), available at silvermoon.up.railway.app, collects
+          when you visit, and how it is used. We aim to collect as little as
+          possible.
+        </p>
+
+        <h2>Summary</h2>
+        <ul>
+          <li>We don't use cookies</li>
+          <li>
+            We don't ask for, collect or store any personal information such as
+            names, account passwords or other
+          </li>
+          <li>
+            Our hosting provider may automatically process technical request
+            data, including IP addresses and browser information, as described
+            below.
+          </li>
+          <li>
+            We use Google Search Console to understand how the site performs in
+            Google Search
+          </li>
+        </ul>
+
+        <h2 style="margin-top: -2px">Information we collect</h2>
+
+        <h3 style="margin-top: -2px">Server logs (web hosting)</h3>
+        <p>
+          This website is hosted on <a href="https://railway.com/">Railway</a>.
+          When you visit, it may automatically log the following information:
+        </p>
+        <ul>
+          <li>
+            Resource's address (such as page's content, images and other) your
+            web browser has requested
+          </li>
+          <li>
+            Your browser's user agent (browser type, version, and operating
+            system)
+          </li>
+          <li>Your public IP address</li>
+          <li>The date and time of the request</li>
+        </ul>
+        <p>
+          Logs are retained by Railway according to its own retention practices.
+          <br />
+          See
+          <a href="https://railway.com/legal/privacy"
+            >Railway's Privacy Policy</a
+          >
+          for details.
+        </p>
+
+        <h3>Google Search Console</h3>
+        <p>
+          We use Google Search Console to monitor how our site appears in Google
+          Search results.
+          <br />
+          Search Console does not place any tracking code on this website or
+          collect data from you while you browse it.
+          <br />
+          It provides us with aggregated information collected by Google from
+          Google Search, such as search queries that led to our site,
+          impressions, clicks, and indexing or technical issues.
+          <br />
+          We cannot identify individual visitors from this data.
+        </p>
+        <br />
+        <p>
+          Google processes that data under its own policies, see
+          <a href="https://policies.google.com/privacy"
+            >Google's Privacy Policy</a
+          >.
+        </p>
+        <h3>Cookies</h3>
+        <p>
+          This website doesn't use cookies or tracking technologies that require
+          them.
+        </p>
+        <h3>User settings and preferences</h3>
+        <p>
+          This website stores preferences, such as your selected interface
+          theme, in your browser's local storage. These preferences are not
+          transmitted to our servers by the website's preference functionality.
+          <br />
+          They remain on your device until you clear them or the website removes
+          them.
+        </p>
+
+        <h2>How we use this information</h2>
+        <p>
+          We use information described above only for the following purposes:
+        </p>
+        <ul>
+          <li>Website delivery and security</li>
+          <li>Technical diagnostics</li>
+          <li>Study how the site appears in search results</li>
+        </ul>
+        <p>
+          We do not sell or rent visitor personal data. We rely on Railway to
+          host the website and process technical request data as necessary to
+          deliver and secure the service. Please see
+          <a href="https://railway.com/legal/privacy"
+            >Railway's Privacy Policy</a
+          >
+        </p>
+
+        <h2>Third parties</h2>
+        <p>The third parties involved are:</p>
+        <ul>
+          <li>Railway - our hosting provider, which collects request data</li>
+          <li>
+            Google - through Search Console and Search, as described above
+          </li>
+        </ul>
+
+        <h2>Your rights</h2>
+        <p>
+          Depending on where you live (for example, in the European Economic
+          Area or UK under the GDPR), you may have rights to access, correct,
+          delete, or restrict the processing of personal data about you, and to
+          object to its processing.
+        </p>
+        <br />
+        <p>
+          Because we do not maintain records that identify individual visitors,
+          we may be unable to link log data to a specific person.
+        </p>
+        <br />
+        <p>
+          We process technical request data where necessary for website
+          delivery, maintenance and security. Our legal basis is our legitimate
+          interest in operating and protecting the website, where those
+          interests are not overridden by your rights and freedoms.
+        </p>
+
+        <h2>Children's privacy</h2>
+        <p>
+          This website is not directed at children, and we do not knowingly
+          collect personal information from anyone, including children.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this policy from time to time. Changes will be posted on
+          this page with a new "Last updated" date.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          If you have questions about this policy, contact the website owner at
+          email address:
+          <a href="mailto:ieaturanium00@gmail.com">ieaturanium00@gmail.com</a>
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="list">
+        <a
+          href="https://github.com/IEatUranium238/silvermoon-web"
+          target="_blank"
+          >Website source</a
+        >
+        <a href="/logo">Silvermoon's Logo</a>
+        <a href="/privacy">Privacy policy</a>
+      </div>
+      <hr />
+      <div class="other">
+        <div class="text">
+          <p>
+            Made with ❤️, running Silvermoon version
+            <lua>return sm.VERSION</lua>
+          </p>
+          <p>
+            <a href="https://lua.org" target="_blank">Lua</a>
+            is owned by PUC-Rio. Trademarks are the property of their respective
+            owners.
+          </p>
+        </div>
+        <a href="/mascot" class="mascot"
+          ><img
+            src="/resources/images/mascot.svg"
+            alt="Silver the cat, mascot of Silvermoon"
+        /></a>
+      </div>
+    </footer>
+
+    <div class="hidden" id="menu">
+      <div class="top">
+        <button
+          class="invisible square big-font change-mode-button"
+          aria-label="Change theme button"
+        >
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
+        <button
+          class="invisible square big-font"
+          aria-label="Close menu"
+          id="closeMenu"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <nav>
+        <a href="/docs" class="big-font"
+          ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
+        >
+        <a href="/docs/getting-started/#installation" class="big-font"
+          ><i class="bi bi-download" aria-hidden="true"></i>Install</a
+        >
+        <a href="https://github.com/IEatUranium238/silvermoon" class="big-font"
+          ><i class="bi bi-github" aria-hidden="true"></i>GitHub</a
+        >
+      </nav>
+    </div>
+
+    <script src="/resources/js/changeMode.js"></script>
+    <script src="/resources/js/menu.js" defer></script>
+    <script defer>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

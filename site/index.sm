@@ -8,7 +8,10 @@
     <meta name="description" content="A HTML preprocessor with power of lua." />
     <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico" />
 
-    <meta name="google-site-verification" content="vCZFGHiY9HGl0N7785E_M9J2q-rbzslKDbHvRpGQvsw" />
+    <meta
+      name="google-site-verification"
+      content="vCZFGHiY9HGl0N7785E_M9J2q-rbzslKDbHvRpGQvsw"
+    />
 
     <!-- Connect style sheets -->
     <link rel="stylesheet" href="/resources/css/shared/global.css" />
@@ -17,6 +20,7 @@
 
     <link rel="stylesheet" href="/resources/css/mainPage/hero.css" />
     <link rel="stylesheet" href="/resources/css/mainPage/features.css" />
+    <link rel="stylesheet" href="/resources/css/mainPage/faq.css" />
 
     <!-- Other sources -->
     <!-- Bootstrap icons -->
@@ -39,6 +43,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"></script>
+
+    <!-- Google stuff -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Silvermoon",
+        "url": "https://silvermoon.up.railway.app"
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -49,7 +63,7 @@
         <a href="/docs"
           ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
         >
-        <a href="/docs/getting-started/#Install"
+        <a href="/docs/getting-started/#installation"
           ><i class="bi bi-download" aria-hidden="true"></i>Install</a
         >
         <a href="https://github.com/IEatUranium238/silvermoon"
@@ -99,30 +113,105 @@
           local renderer = require("include.renderFeatures"); renderer.render();
         </lua>
       </section>
+
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How does Silvermoon work?</summary>
+          <p>
+            Silvermoon is a HTML preprocessor. It takes your source file,
+            executes Lua code embedded in Lua tags, and outputs generated HTML.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I use external Lua packages?</summary>
+          <p>
+            Yes! Silvermoon supports external Lua modules and packages. This
+            lets you reuse existing libraries and organize your project.
+          </p>
+        </details>
+
+        <details>
+          <summary>What version of Lua does Silvermoon use?</summary>
+          <p>
+            Silvermoon uses Lua 5.1 via LuaJIT. LuaJIT allows for faster code
+            executes as it compiles Lua to native CPU instructions on the fly.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I contribute to Silvermoon?</summary>
+          <p>
+            Contributions are welcome! You can suggest features, report bugs,
+            improve documentation or submit code changes. Help improve the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon preprocessor</a
+            >
+            or the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon-web"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon website</a
+            >.
+          </p>
+        </details>
+
+        <details>
+          <summary>I found a bug or other issue in Silvermoon</summary>
+          <p>
+            Click one of these links to file an issue for: <br/>
+            <a
+              href="https://github.com/IEatUranium238/silvermoon/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon preprocessor</a
+            >
+            or the
+            <a
+              href="https://github.com/IEatUranium238/silvermoon-web/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Silvermoon website</a
+            >.
+          </p>
+        </details>
+      </section>
     </main>
 
     <footer>
-      <div class="footer-content">
-        <div class="footer-main">
+      <div class="list">
+        <a
+          href="https://github.com/IEatUranium238/silvermoon-web"
+          target="_blank"
+          >Website source</a
+        >
+        <a href="/logo">Silvermoon's Logo</a>
+        <a href="/privacy">Privacy policy</a>
+      </div>
+      <hr />
+      <div class="other">
+        <div class="text">
           <p>
             Made with ❤️, running Silvermoon version
             <lua>return sm.VERSION</lua>
           </p>
           <p>
-            <a href="https://lua.org" target="_blank"
-              ><i>Lua <i class="bi bi-arrow-up-right" aria-hidden="true"></i></i
-            ></a>
+            <a href="https://lua.org" target="_blank">Lua</a>
             is owned by PUC-Rio. Trademarks are the property of their respective
             owners.
           </p>
         </div>
-        <a
-          href="https://github.com/IEatUranium238/silvermoon-web"
-          target="_blank"
-          ><i
-            >This website is open source
-            <i class="bi bi-arrow-up-right" aria-hidden="true"></i></i
-        ></a>
+        <a href="/mascot" class="mascot"
+          ><img
+            src="/resources/images/mascot.svg"
+            alt="Silver the cat, mascot of Silvermoon"
+        /></a>
       </div>
     </footer>
 
@@ -146,7 +235,7 @@
         <a href="/docs" class="big-font"
           ><i class="bi bi-journal-code" aria-hidden="true"></i>Documentation</a
         >
-        <a href="/docs/getting-started/#Install" class="big-font"
+        <a href="/docs/getting-started/#installation" class="big-font"
           ><i class="bi bi-download" aria-hidden="true"></i>Install</a
         >
         <a href="https://github.com/IEatUranium238/silvermoon" class="big-font"
@@ -155,8 +244,8 @@
       </nav>
     </div>
 
-    <script src="./resources/js/changeMode.js"></script>
-    <script src="./resources/js/featureListNav.js" defer></script>
+    <script src="/resources/js/changeMode.js"></script>
+    <script src="/resources/js/featureListNav.js" defer></script>
     <script src="/resources/js/menu.js" defer></script>
     <script defer>
       hljs.highlightAll();

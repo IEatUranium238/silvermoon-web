@@ -42,7 +42,7 @@ p {
 }
 
 a {
-  color: var(--cl-tx);
+  color: var(--cl-txt);
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.25s ease-in-out;
@@ -70,22 +70,23 @@ button {
   color: var(--cl-tx);
 
   border: solid 1.5px var(--cl-br);
-  background-color: transparent;
+  background-color: var(--cl-br);
 
   border-radius: 5px;
 
   &:hover {
-    background-color: var(--cl-br);
+    background-color: oklch(from var(--cl-br) calc(l * 0.9) c h);
+    border-color: oklch(from var(--cl-br) calc(l * 0.9) c h);
   }
 
   &.primary {
     border-color: var(--cl-ac);
+    background-color: var(--cl-ac);
 
     &:hover {
-      background-color: var(--cl-ac);
-      color: white;
+      background-color: oklch(from var(--cl-ac) calc(l * 0.9) c h);
+      border-color: oklch(from var(--cl-ac) calc(l * 0.9) c h);
     }
-
   }
 }
 

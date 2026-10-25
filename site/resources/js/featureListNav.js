@@ -23,7 +23,7 @@ function setVis(isFwd) {
     buttonBk.classList.remove("hidden");
   }
 
-  if (indx === 3) {  // ← Changed from 4 to 3
+  if (indx === 3) {
     buttonFwd.classList.add("hidden");
   } else {
     buttonFwd.classList.remove("hidden");
